@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* ELEMENT STYLES */
+html {
+  font-size: 16px;
+}
+body {
+  font-family: "Press Start 2P", sans-serif;
+  color: #eee;
+  background-color: #222;
+}
+main {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* UTILITY CLASSES */
+
+.btn {
+  background-color: #eee;
+  color: #222;
+  font-size: 1.25rem;
+  font-family: inherit;
+  padding: 1rem 2rem;
+  transition: background-color 0.2s ease;
+  width: fit-content;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #ccc;
+}
+
+/* HEADER */
+
+header .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  width: 100%;
+}
+header h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 1rem 0;
+}
+header .question {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  position: relative;
+  z-index: 1;
+}
+header .question span {
+  font-size: 2.5rem;
+  background-color: #eee;
+  color: #212121;
+  padding: 1.25rem;
+}
+header .question::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0.5rem;
+  background-color: #eee;
+  top: 50%;
+  z-index: -1;
+}
+/* main */
+
+.container {
+  width: min(calc(100% - 4rem), 900px);
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  margin: 3rem auto;
+  gap: 3rem;
+}
+.container .left,
+.container .right {
+  /* padding: 0 16px; */
+  display: flex;
+  flex-direction: column;
+
+  width: 50%;
+  gap: 1rem;
+}
+.container .left {
+  align-items: center;
+}
+.left .check {
+  margin: 0 auto;
+}
+.left .guess {
+  width: 175px;
+  height: 100px;
+  background-color: #222;
+  border: 2px solid #eee;
+  padding: 1rem;
+  font-size: 2rem;
+  text-align: left;
+  font-family: inherit;
+  color: #eee;
+  /* margin-bottom: 2rem; */
+  margin: 0 auto 2rem;
+}
+.container .right p:nth-of-type(1) {
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+}
+
+/* mobile layout */
+@media screen and (max-width: 650px) {
+  .btn {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+  /* HEADER */
+  header .top {
+    padding: 8px;
+  }
+  header .top p {
+    font-size: 0.75rem;
+  }
+  header h1 {
+    font-size: 1.25rem;
+  }
+  header .question span {
+    padding: 0.5rem;
+  }
+  /* MAIN */
+  .container {
+    width: 100%;
+  }
+  .container .left {
+    align-items: start;
+    width: 30%;
+  }
+  .left .guess {
+    width: 120px;
+    height: 70px;
+  }
+  .container .right p:nth-of-type(1) {
+    font-size: 1rem;
+  }
+  .container .right p {
+    font-size: 0.75rem;
+    width: 70%;
+    line-height: 1.75;
+  }
+}
